@@ -1,0 +1,20 @@
+@import '../../styles/Style.scss';
+
+.nav-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $accent;
+    padding: 1rem 1rem;
+
+    .container {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        .button {
+            color: #fff;
+        }
+    }
+}

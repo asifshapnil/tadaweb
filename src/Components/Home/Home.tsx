@@ -2,6 +2,7 @@ import AddIcon from '@material-ui/icons/Add';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { ContentWrapper } from '../../Layout/Content-wrapper/ContentWrapper';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import ViewListIcon from '@mui/icons-material/ViewList';
 import { Link, useNavigate } from 'react-router-dom';
 
 import './Home.scss';
@@ -24,6 +25,10 @@ function HomeContent() {
                     <div className='menuBox calendar ripple'>
                         <CalendarMonthIcon style={{ fontSize: 40, color: "#fff" }} />
                         <div>Calendar View</div>
+                    </div>
+                    <div className='menuBox table ripple'>
+                        <ViewListIcon style={{ fontSize: 40, color: "#fff" }} />
+                        <div>Tabular View</div>
                     </div>
                     <div className='menuBox saving ripple'>
                         <AttachMoneyIcon style={{ fontSize: 40, color: "#fff" }} />

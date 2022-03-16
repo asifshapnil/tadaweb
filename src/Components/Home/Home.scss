@@ -1,13 +1,20 @@
+
+.page {
+    padding-bottom: 3rem;
+}
+.hometitle {
+    font-size: 20px;
+    font-weight: bold;
+}
 .homecontent {
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     .elements {
-        padding: 3rem 3rem;
+        margin-top: 2rem;
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
         gap: 1rem;
         .menuBox {
             cursor: pointer;

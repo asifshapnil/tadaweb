@@ -1,0 +1,32 @@
+.page {
+    padding-bottom: 3rem;
+    .addtitle {
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 1rem;
+    }
+}
+
+.formwrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    .form {
+        width: 100%;
+        margin-bottom: 1rem;
+        .formflex {
+            width: 100%;
+            display: flex;
+            >* {
+                width: 100%;
+                margin: 1rem 0 0 1rem;
+            }
+            .MuiFormControl-root {
+                width: 100%;
+            }
+        }
+        
+    }
+}

@@ -7,6 +7,7 @@ import {
 } from "react-router-dom"; import { Navbar } from './shared-components/Nav/Navbar';
 import './App.scss';
 import { Home } from './Components/Home/Home';
+import { AddExpense } from './Components/Add-expense/AddExpense';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path='' element={<Home />} />
+        <Route path='/add-expense' element={<AddExpense />} />
       </Routes>
     </BrowserRouter>
   );

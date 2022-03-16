@@ -1,0 +1,15 @@
+.contentwrapper {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .content {
+        box-shadow: 0 0px 4px -2px #000, 0 2px 0px -4px #000;
+        border-radius: 7px;
+        width: 80%;
+        height: 100%;
+        background-color: #fff;
+        padding: 1rem 1rem;
+    }
+}

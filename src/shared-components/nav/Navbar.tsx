@@ -2,6 +2,7 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import React from 'react';
+import PersonIcon from '@material-ui/icons/Person';
 import { NavDrawer } from './drawer';
 import './Navbar.scss';
 
@@ -19,11 +20,12 @@ export const Navbar = () => {
         <div className='nav-wrapper'>
             <div className='container'>
                 <div>
-                    <NavDrawer/>
+                    {/* <NavDrawer/> */}
+                    <div className='title'>TadaWeb Expense Manager</div>
                 </div>
                 <div>
-                    <Button className='button' aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                        Open Menu
+                    <Button className='button' startIcon={<PersonIcon />} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                        Md Asif
                     </Button>
                     <Menu
                         id="simple-menu"

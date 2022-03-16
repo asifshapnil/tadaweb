@@ -2,9 +2,12 @@ import AddIcon from '@material-ui/icons/Add';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { ContentWrapper } from '../../Layout/Content-wrapper/ContentWrapper';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import { Link, useNavigate } from 'react-router-dom';
+
 import './Home.scss';
 
 function HomeContent() {
+    const navigate = useNavigate();
     return (
         <div className='page'>
             <div className='hometitle'>
@@ -12,10 +15,12 @@ function HomeContent() {
             </div>
             <div className='homecontent'>
                 <div className='elements'>
-                    <div className='menuBox add ripple'>
-                        <AddIcon style={{ fontSize: 40, color: "#fff" }} />
-                        <div>Add Expense</div>
-                    </div>
+                    <Link className="font-normal" to="/add-expense">
+                        <div className='menuBox add ripple'>
+                            <AddIcon style={{ fontSize: 40, color: "#fff" }} />
+                            <div>Add Expense</div>
+                        </div>
+                    </Link>
                     <div className='menuBox calendar ripple'>
                         <CalendarMonthIcon style={{ fontSize: 40, color: "#fff" }} />
                         <div>Calendar View</div>

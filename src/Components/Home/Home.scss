@@ -42,6 +42,10 @@
     }
 }
 
+.font-normal {
+    text-decoration: none;
+}
+
 /* Ripple effect */
 .ripple {
   background-position: center;
@@ -54,3 +58,5 @@
   background-size: 100%;
   transition: background 0s;
 }
+
+

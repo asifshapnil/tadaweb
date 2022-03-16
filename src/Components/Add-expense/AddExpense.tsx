@@ -4,6 +4,7 @@ import { ContentWrapper } from '../../Layout/Content-wrapper/ContentWrapper';
 import { Form, Formik, Field } from 'formik';
 import { TextField as TextFieldFormik } from 'formik-material-ui';
 import { Typography, Button, MenuItem } from '@mui/material';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import './AddExpense.scss';
 
 function AddExpenseContent() {
@@ -13,6 +14,7 @@ function AddExpenseContent() {
     return (
         <div className='page'>
             <div className='addtitle'>
+                <ArrowBackIosIcon/>
                 Add Expense
             </div>
             <div className='addcontent'>

@@ -4,6 +4,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import React from 'react';
 import PersonIcon from '@material-ui/icons/Person';
 import { NavDrawer } from './drawer';
+import { Link, useNavigate } from 'react-router-dom';
+
 import './Navbar.scss';
 
 export const Navbar = () => {
@@ -20,8 +22,9 @@ export const Navbar = () => {
         <div className='nav-wrapper'>
             <div className='container'>
                 <div>
-                    {/* <NavDrawer/> */}
-                    <div className='title'>TadaWeb Expense Manager</div>
+                    <Link className="font-normal" to="/">
+                        <div className='title'>TadaWeb Expense Manager</div>
+                    </Link>
                 </div>
                 <div>
                     <Button className='button' startIcon={<PersonIcon />} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>

@@ -12,7 +12,7 @@ function HomeContent() {
     return (
         <div className='page'>
             <div className='hometitle'>
-                Expence Manager Mneu
+                Expense Manager Mneu
             </div>
             <div className='homecontent'>
                 <div className='elements'>

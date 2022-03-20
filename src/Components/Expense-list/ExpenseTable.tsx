@@ -15,7 +15,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Select, TextField as TextFieldFormik } from 'formik-material-ui';
 import { Typography, Button, MenuItem } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
-import { getExpenses, filterData, clearFilter } from '../../Store/expenseSlice';
+import { getExpenses, filterData, clearFilter, postExpense } from '../../Store/expenseSlice';
 import './ExpenseList.scss';
 import { clear } from 'console';
 
@@ -98,6 +98,7 @@ export default function ExpenseTable() {
 
     const expenseStatus = useSelector((state: RootState) => state.expense.fetchstatus);
     const data = useSelector((state: RootState) => state.expense.data);
+    let expenses: any[] = useSelector((state: RootState) => state.expense.expense);
     const dispatch = useDispatch();
 
     const onApply = (values: any) => {
@@ -127,6 +128,16 @@ export default function ExpenseTable() {
         dispatch(clearFilter());
     }
 
+    const navigate = useNavigate();
+
+    const deleteItem = (id: any) => {
+        let expensecopy: any[];
+        expensecopy = JSON.parse(JSON.stringify(expenses));
+        expensecopy = expensecopy.filter(e => e.id !== id);
+        localStorage.removeItem('expense');
+        dispatch(postExpense(expensecopy));
+        navigate('/expense-list');
+    }
 
     useEffect(() => {
         if (expenseStatus === 'idle') {
@@ -212,7 +223,8 @@ export default function ExpenseTable() {
                                 <TableHead>
                                     <TableRow>
                                         <TableCell align="left">Date</TableCell>
-                                        <TableCell align="left">Expense Purp[ose</TableCell>
+                                        <TableCell align="left">Expense Purpose</TableCell>
+                                        <TableCell align="left">Expense Amount</TableCell>
                                         <TableCell align="left">Reamrks</TableCell>
                                         <TableCell align="left"></TableCell>
                                     </TableRow>
@@ -225,6 +237,7 @@ export default function ExpenseTable() {
                                         >
                                             <TableCell align="left">{row.date}</TableCell>
                                             <TableCell align="left">{row.purpose}</TableCell>
+                                            <TableCell align="left">{row.amount}</TableCell>
                                             <TableCell align="left">{row.remarks}</TableCell>
                                             <TableCell align="left">
                                                 <div className='action'>
@@ -238,6 +251,7 @@ export default function ExpenseTable() {
                                                         </Button>
                                                     </Link>
                                                     <Button
+                                                        onClick={() => deleteItem(row.id)}
                                                         className='btn'
                                                         variant="contained"
                                                         type="submit"

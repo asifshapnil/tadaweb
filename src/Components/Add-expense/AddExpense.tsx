@@ -73,6 +73,7 @@ function AddExpenseContent() {
                 <Formik
                     initialValues={{
                         date: '',
+                        amount: '',
                         purpose: '',
                         remarks: '',
                     }}
@@ -87,6 +88,14 @@ function AddExpenseContent() {
                                             name="purpose"
                                             component={TextFieldFormik}
                                             label="EXPENSE PURPOSE"
+                                            variant="outlined"
+                                        />
+                                    </div>
+                                    <div>
+                                        <Field
+                                            name="amount"
+                                            component={TextFieldFormik}
+                                            label="EXPENSE AMOUNT"
                                             variant="outlined"
                                         />
                                     </div>

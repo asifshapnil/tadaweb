@@ -89,6 +89,14 @@ function EditExpenseContent(props: any) {
                                                     variant="outlined"
                                                 />
                                             </div>
+                                            <div>
+                                                <Field
+                                                    name="amount"
+                                                    component={TextFieldFormik}
+                                                    label="EXPENSE AMOUNT"
+                                                    variant="outlined"
+                                                />
+                                            </div>
                                         </div>
                                         <div className='formflex'>
                                             <div >

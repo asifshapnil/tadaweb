@@ -4,7 +4,7 @@ import { ContentWrapper } from '../../Layout/Content-wrapper/ContentWrapper';
 import { Form, Formik, Field } from 'formik';
 import { TextField as TextFieldFormik } from 'formik-material-ui';
 import { Typography, Button, MenuItem } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
@@ -16,16 +16,11 @@ import { RootState } from '../../Store';
 import { getExpenses, postExpense } from '../../Store/expenseSlice';
 
 
-import './AddExpense.scss';
+import './EditExpense.scss';
 
-function AddExpenseContent() {
+function EditExpenseContent(props: any) {
 
-    const uuidv4 = () => {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-            var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
-            return v.toString(16);
-        });
-      }
+    const {id} = useParams(); 
 
     const navigate = useNavigate();
     const navigateBack = () => {
@@ -33,7 +28,7 @@ function AddExpenseContent() {
     }
 
     const [date, setdate] = useState(`${new Date().getMonth()}/${new Date().getDate()}/${new Date().getFullYear()}`);
-
+    const [expenseDetail, setexpenseDetail] = useState({});
     const handleDateChange = (event: any) => {
        const date = new Date(event).toLocaleDateString();
        setdate(date);
@@ -47,7 +42,7 @@ function AddExpenseContent() {
     const onSubmit = (values: any) => {        
         let data: {};
         let expensecopy;
-        data = {...values, date, id: uuidv4()};
+        data = {...values, date};
         if(!expenses) { expenses = []; }
         else { expensecopy = JSON.parse(JSON.stringify(expenses)); }
         expensecopy.push(data);
@@ -62,20 +57,22 @@ function AddExpenseContent() {
         }
     }, [expenseStatus, dispatch]);
 
+    useEffect(() => {
+        if (expenses && expenses.length) {
+            setexpenseDetail(expenses.find(e => e.id === id));
+        }
+    }, [expenses]);
+
 
     return (
         <div className='page'>
             <div className='addtitle' onClick={() => navigateBack()}>
                 <ArrowBackIosIcon />
-                Add Expense
+                Edit Expense
             </div>
             <div className='addcontent'>
                 <Formik
-                    initialValues={{
-                        date: '',
-                        purpose: '',
-                        remarks: '',
-                    }}
+                    initialValues={expenseDetail}
                     onSubmit={(values) => onSubmit(values)}
                 >
                     <Form autoComplete="off">
@@ -128,10 +125,10 @@ function AddExpenseContent() {
     );
 }
 
-export const AddExpense = () => {
+export const EditExpense = () => {
     return (
         <ContentWrapper>
-            <AddExpenseContent />
+            <EditExpenseContent />
         </ContentWrapper>
     );
 }

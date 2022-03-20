@@ -109,10 +109,10 @@ export default function ExpenseTable() {
             const month = dateArray[0];
             const year = dateArray[2];
             if (selectedMonth && selectedYear) {
-                console.log(typeof(month));
-                console.log(typeof(year));
-                console.log(typeof(selectedMonth));
-                console.log(typeof(selectedYear));
+                console.log(typeof (month));
+                console.log(typeof (year));
+                console.log(typeof (selectedMonth));
+                console.log(typeof (selectedYear));
 
                 if (month.toString() === selectedMonth.toString() && year.toString() === selectedYear.toString()) {
                     filteredArray.push(expense);
@@ -227,13 +227,15 @@ export default function ExpenseTable() {
                                             <TableCell align="left">{row.remarks}</TableCell>
                                             <TableCell align="left">
                                                 <div className='action'>
-                                                    <Button
-                                                        className='btn'
-                                                        variant="contained"
-                                                        type="submit"
-                                                    >
-                                                        Edit
-                                                    </Button>
+                                                    <Link  className="font-normal" to={{pathname: `/edit-expense/${row.id}`}}>
+                                                        <Button
+                                                            className='btn'
+                                                            variant="contained"
+                                                            type="submit"
+                                                        >
+                                                            Edit
+                                                        </Button>
+                                                    </Link>
                                                     <Button
                                                         className='btn'
                                                         variant="contained"
@@ -252,8 +254,8 @@ export default function ExpenseTable() {
                     </div>
                     :
                     <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: '6rem' }}>
-                        <div style={{fontWeight: 'bold', fontSize: '30px'}}>NO DATA AVAILABLE</div>
-                        <Link className="font-normal" to="/add-expense" style={{marginTop: '1rem', backgroundColor: '#3f3fa0', borderRadius: '7px', color: '#fff', padding: '1rem 1rem'}}>
+                        <div style={{ fontWeight: 'bold', fontSize: '30px' }}>NO DATA AVAILABLE</div>
+                        <Link className="font-normal" to="/add-expense" style={{ marginTop: '1rem', backgroundColor: '#3f3fa0', borderRadius: '7px', color: '#fff', padding: '1rem 1rem' }}>
                             Add Expense
                         </Link>
                     </div>

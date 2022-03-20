@@ -25,10 +25,12 @@ function AddExpenseContent() {
         navigate('/');
     }
 
-    const [date, setdate] = useState(`${new Date().getMonth()}-${new Date().getDate()}-${new Date().getFullYear()}`);
+    const [date, setdate] = useState(`${new Date().getMonth()}/${new Date().getDate()}/${new Date().getFullYear()}`);
 
     const handleDateChange = (event: any) => {
-
+       const date = new Date(event).toLocaleDateString();
+       setdate(date);
+       console.log("🚀 ~ file: AddExpense.tsx ~ line 32 ~ handleDateChange ~ date", date)
     }
     
     const expenseStatus = useSelector((state: RootState) => state.expense.fetchstatus);
@@ -44,6 +46,7 @@ function AddExpenseContent() {
         expensecopy.push(data);
         localStorage.removeItem('expense');
         dispatch(postExpense(expensecopy));
+        navigate('/expense-list');
     }
 
     useEffect(() => {
@@ -87,7 +90,7 @@ function AddExpenseContent() {
                                             <DesktopDatePicker
                                                 label="Date desktop"
                                                 inputFormat="MM/dd/yyyy"
-                                                value={`${new Date().getMonth()}-${new Date().getDate()}-${new Date().getFullYear()}`}
+                                                value={date}
                                                 onChange={handleDateChange}
                                                 renderInput={(params) => <TextField {...params} />}
                                             />

@@ -34,10 +34,12 @@ function HomeContent() {
                             <div>Tabular View</div>
                         </div>
                     </Link>
-                    <div className='menuBox saving ripple'>
-                        <AttachMoneyIcon style={{ fontSize: 40, color: "#fff" }} />
-                        <div>Savings</div>
-                    </div>
+                    <Link className="font-normal" to="/coming-soon">
+                        <div className='menuBox saving ripple'>
+                            <AttachMoneyIcon style={{ fontSize: 40, color: "#fff" }} />
+                            <div>Savings</div>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div >

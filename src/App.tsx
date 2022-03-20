@@ -13,6 +13,7 @@ import { AddExpense } from './Components/Add-expense/AddExpense';
 import { ExpenseList } from './Components/Expense-list/ExpenseList';
 import { EditExpense } from './Components/Edit-expense copy/EditExpense';
 import { Calendar } from './Components/Calendar/Calendar';
+import { ComingSoon } from './Components/Coming-soon/Coming-soon';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='/edit-expense/:id' element={<EditExpense />} />
         <Route path='/expense-list' element={<ExpenseList/>} />
         <Route path='/calendar' element={<Calendar/>} />
+        <Route path='/coming-soon' element={<ComingSoon/>} />
       </Routes>
     </BrowserRouter>
   );

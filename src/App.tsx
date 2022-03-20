@@ -8,6 +8,7 @@ import {
 import './App.scss';
 import { Home } from './Components/Home/Home';
 import { AddExpense } from './Components/Add-expense/AddExpense';
+import { ExpenseList } from './Components/Expense-list/ExpenseList';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path='' element={<Home />} />
         <Route path='/add-expense' element={<AddExpense />} />
+        <Route path='/expense-list' element={<ExpenseList />} />
       </Routes>
     </BrowserRouter>
   );

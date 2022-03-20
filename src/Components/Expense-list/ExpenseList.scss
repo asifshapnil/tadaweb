@@ -1,0 +1,24 @@
+.page {
+    padding-bottom: 3rem;
+    .addtitle {
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 0;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: 2rem;
+    }
+}
+
+.action {
+    display: flex;
+}
+
+.filter {
+    margin-bottom: 1rem;
+}
+
+.formflex {
+    display: flex;
+}

@@ -26,17 +26,19 @@ function HomeContent() {
                         <CalendarMonthIcon style={{ fontSize: 40, color: "#fff" }} />
                         <div>Calendar View</div>
                     </div>
-                    <div className='menuBox table ripple'>
-                        <ViewListIcon style={{ fontSize: 40, color: "#fff" }} />
-                        <div>Tabular View</div>
-                    </div>
+                    <Link className="font-normal" to="/expense-list">
+                        <div className='menuBox table ripple'>
+                            <ViewListIcon style={{ fontSize: 40, color: "#fff" }} />
+                            <div>Tabular View</div>
+                        </div>
+                    </Link>
                     <div className='menuBox saving ripple'>
                         <AttachMoneyIcon style={{ fontSize: 40, color: "#fff" }} />
                         <div>Savings</div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 

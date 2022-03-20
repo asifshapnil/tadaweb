@@ -22,10 +22,12 @@ function HomeContent() {
                             <div>Add Expense</div>
                         </div>
                     </Link>
-                    <div className='menuBox calendar ripple'>
-                        <CalendarMonthIcon style={{ fontSize: 40, color: "#fff" }} />
-                        <div>Calendar View</div>
-                    </div>
+                    <Link className="font-normal" to="/calendar">
+                        <div className='menuBox calendar ripple'>
+                            <CalendarMonthIcon style={{ fontSize: 40, color: "#fff" }} />
+                            <div>Calendar View</div>
+                        </div>
+                    </Link>
                     <Link className="font-normal" to="/expense-list">
                         <div className='menuBox table ripple'>
                             <ViewListIcon style={{ fontSize: 40, color: "#fff" }} />

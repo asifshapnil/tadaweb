@@ -12,6 +12,7 @@ import { Home } from './Components/Home/Home';
 import { AddExpense } from './Components/Add-expense/AddExpense';
 import { ExpenseList } from './Components/Expense-list/ExpenseList';
 import { EditExpense } from './Components/Edit-expense copy/EditExpense';
+import { Calendar } from './Components/Calendar/Calendar';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/add-expense' element={<AddExpense />} />
         <Route path='/edit-expense/:id' element={<EditExpense />} />
         <Route path='/expense-list' element={<ExpenseList/>} />
+        <Route path='/calendar' element={<Calendar/>} />
       </Routes>
     </BrowserRouter>
   );

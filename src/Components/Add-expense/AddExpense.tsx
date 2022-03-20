@@ -32,7 +32,7 @@ function AddExpenseContent() {
         navigate('/');
     }
 
-    const [date, setdate] = useState(`${new Date().getMonth()}/${new Date().getDate()}/${new Date().getFullYear()}`);
+    const [date, setdate] = useState(`${new Date().getMonth() + 1}/${new Date().getDate()}/${new Date().getFullYear()}`);
 
     const handleDateChange = (event: any) => {
        const date = new Date(event).toLocaleDateString();

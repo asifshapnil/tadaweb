@@ -142,69 +142,70 @@ export default function ExpenseTable() {
 
     return (
         <div>
+
+            <div className='filter'>
+                <Formik
+                    initialValues={{
+                        month: '',
+                        year: '',
+                    }}
+                    onSubmit={(values) => onApply(values)}
+                >
+                    <Form autoComplete="off">
+                        <div className='formflex'>
+                            <div style={{ width: '100%' }}>
+                                <Field
+                                    name="month"
+                                    variant="outlined"
+                                    component={Select}
+                                    onChange={handleMonthChange}
+                                    label="SELECT MONTH"
+                                >
+                                    {months.map((month, index) => (
+                                        <MenuItem key={index} value={month.id}>
+                                            {month.name}
+                                        </MenuItem>
+                                    ))}
+                                </Field>
+                            </div>
+                            <div style={{ marginLeft: '1rem', width: '100%' }}>
+                                <Field
+                                    name="year"
+                                    variant="outlined"
+                                    component={Select}
+                                    onChange={handleYearChange}
+                                    label="SELECT YEAR"
+                                >
+                                    {years.map((year, index) => (
+                                        <MenuItem key={index} value={year.name}>
+                                            {year.name}
+                                        </MenuItem>
+                                    ))}
+                                </Field>
+                            </div>
+                            <Button
+                                style={{ marginLeft: '1rem', width: '170px' }}
+                                className='btn'
+                                variant="contained"
+                                type="submit"
+                            >
+                                Apply
+                            </Button>
+                            <Button
+                                onClick={() => clearData()}
+                                style={{ marginLeft: '1rem', width: '170px' }}
+                                className='btn'
+                                variant="contained"
+                            >
+                                Clear
+                            </Button>
+                        </div>
+                    </Form>
+                </Formik>
+            </div>
             {
                 data && data.length ?
                     <div>
-                        <div className='filter'>
-                            <Formik
-                                initialValues={{
-                                    month: '',
-                                    year: '',
-                                }}
-                                onSubmit={(values) => onApply(values)}
-                            >
-                                <Form autoComplete="off">
-                                    <div className='formflex'>
-                                        <div style={{ width: '100%' }}>
-                                            <Field
-                                                name="month"
-                                                variant="outlined"
-                                                component={Select}
-                                                onChange={handleMonthChange}
-                                                label="SELECT MONTH"
-                                            >
-                                                {months.map((month, index) => (
-                                                    <MenuItem key={index} value={month.id}>
-                                                        {month.name}
-                                                    </MenuItem>
-                                                ))}
-                                            </Field>
-                                        </div>
-                                        <div style={{ marginLeft: '1rem', width: '100%' }}>
-                                            <Field
-                                                name="year"
-                                                variant="outlined"
-                                                component={Select}
-                                                onChange={handleYearChange}
-                                                label="SELECT YEAR"
-                                            >
-                                                {years.map((year, index) => (
-                                                    <MenuItem key={index} value={year.name}>
-                                                        {year.name}
-                                                    </MenuItem>
-                                                ))}
-                                            </Field>
-                                        </div>
-                                        <Button
-                                            style={{ marginLeft: '1rem', width: '170px' }}
-                                            className='btn'
-                                            variant="contained"
-                                            type="submit"
-                                        >
-                                            Apply
-                                        </Button>
-                                        <Button
-                                            onClick={() => clearData()}
-                                            style={{ marginLeft: '1rem', width: '170px' }}
-                                            className='btn'
-                                            variant="contained"
-                                        >
-                                            Clear
-                                        </Button>
-                                    </div>
-                                </Form>
-                            </Formik>
-                        </div>
 
                         <TableContainer component={Paper}>
                             <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -227,7 +228,7 @@ export default function ExpenseTable() {
                                             <TableCell align="left">{row.remarks}</TableCell>
                                             <TableCell align="left">
                                                 <div className='action'>
-                                                    <Link  className="font-normal" to={{pathname: `/edit-expense/${row.id}`}}>
+                                                    <Link className="font-normal" to={{ pathname: `/edit-expense/${row.id}` }}>
                                                         <Button
                                                             className='btn'
                                                             variant="contained"

@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/tadaweb/static/css/main.33578c89.css",
-    "main.js": "/tadaweb/static/js/main.80c7857b.js",
+    "main.js": "/tadaweb/static/js/main.6bd8274f.js",
     "static/js/787.48e9a96f.chunk.js": "/tadaweb/static/js/787.48e9a96f.chunk.js",
     "index.html": "/tadaweb/index.html",
     "main.33578c89.css.map": "/tadaweb/static/css/main.33578c89.css.map",
-    "main.80c7857b.js.map": "/tadaweb/static/js/main.80c7857b.js.map",
+    "main.6bd8274f.js.map": "/tadaweb/static/js/main.6bd8274f.js.map",
     "787.48e9a96f.chunk.js.map": "/tadaweb/static/js/787.48e9a96f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.33578c89.css",
-    "static/js/main.80c7857b.js"
+    "static/js/main.6bd8274f.js"
   ]
 }
